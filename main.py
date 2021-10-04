@@ -69,6 +69,7 @@ class NameValues(BaseModel):
 def write_home(request: Request, user_name:str):
     return templates.TemplateResponse("home.html", {"request":request, "username": user_name})
 
+#Main Fuction for the requiremnet Mentioned in readme File.
 @app.post("/submitform")
 async def handle_form(assignment: str = Form(...), assignment_file: UploadFile = File(...)):
     print(assignment)
